@@ -1,4 +1,4 @@
-package com.javasm.kafka.event;
+package com.javasm.kafka.producer;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +17,6 @@ public class EventProduce {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-
-    @Bean
     public void sendEvent() {
         kafkaTemplate.send("hello-topic", "message: hello-kafka ");
     }
